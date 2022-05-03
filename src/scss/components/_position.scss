@@ -1,0 +1,16 @@
+.position{
+    background-color: rgb(141, 141, 241);
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 72px;
+    color: white;
+    font-weight: 800;
+
+    &:hover{
+        background-color: rgb(162, 162, 247);
+        cursor: pointer;
+    }
+}
