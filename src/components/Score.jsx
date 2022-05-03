@@ -1,7 +1,7 @@
-import React from "react";
-import Turn from "./Turn";
+import { React, Turn } from '../config/config';
 
 const Score = ({ resultx, resulto, turn }) => {
+
     return <div className="container-table">
         <table className="result">
             <thead>

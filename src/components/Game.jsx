@@ -1,14 +1,14 @@
-import React from 'react';
-import Position from './Position';
+import { React, Position } from '../config/config'
 
 const Game = ({ position, turn, winner, setTurn }) => {
+
     return <div className="container-tictactoe">
         {position.map((position) => (<Position
             position={position}
             turn={turn}
             setTurn={setTurn}
-            winner={winner}
-        />))}
+            winner={winner} />))
+        }
     </div>
 }
 

@@ -1,24 +1,10 @@
-import React from "react";
+import { React } from '../config/config';
+import { insertPosition } from '../config/function';
 
 const Position = ({ position, turn, winner, setTurn }) => {
+    const positionInsert = () => insertPosition({ position, turn, winner, setTurn })
 
-    function insertPosition() {
-        if (winner === '') {
-            if (turn === false) {
-                if (position.turn === '') {
-                    position.turn = 'X'
-                    setTurn(!turn)
-                }
-            } else {
-                if (position.turn === '') {
-                    position.turn = 'O'
-                    setTurn(!turn)
-                }
-            }
-        }
-    }
-
-    return <div className="position" onClick={insertPosition}>{position.turn}</div>
+    return <div className="position" onClick={positionInsert}>{position.turn}</div>
 }
 
 export default Position;

@@ -1,14 +1,11 @@
 input{
-    width: 100px;
-    height: 30px;
-    border: 0px solid transparent;
-    background-color: rgb(141, 141, 241);
-    color: white;
-    font-size: 16px;
-    font-weight: 700;
+    @include dimension(100px, 30px);
+    @include color($game-color, $font-color);
+    @include border(0px, solid, transparent);
+    @include font(16px, $bold);
 
     &:hover{
-        background-color: rgb(162, 162, 247);
+        @include color($game-secondary-color, $font-color);
         cursor: pointer;
     }
 }

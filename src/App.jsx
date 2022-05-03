@@ -1,99 +1,11 @@
-import React, { useEffect, useState } from "react";
-import Button from "./components/Button";
-import Game from "./components/Game";
-import Score from "./components/Score";
-import Turn from "./components/Turn";
+import { useContext, useEffect } from 'react';
+import { Game, Button, Score, React, GameContext } from './config/config';
 import './scss/app.scss';
 
 
 function App() {
 
-  const [turn, setTurn] = useState(false)
-  const [winner, setWinner] = useState('')
-  const [resultx, setResultx] = useState(0)
-  const [resulto, setResulto] = useState(0)
-
-  const [position, setPosition] = useState([
-    {
-      id: 1,
-      turn: ''
-    },
-    {
-      id: 2,
-      turn: ''
-    },
-    {
-      id: 3,
-      turn: ''
-    },
-    {
-      id: 4,
-      turn: ''
-    },
-    {
-      id: 5,
-      turn: ''
-    },
-    {
-      id: 6,
-      turn: ''
-    },
-    {
-      id: 7,
-      turn: ''
-    },
-    {
-      id: 8,
-      turn: ''
-    },
-    {
-      id: 9,
-      turn: ''
-    }
-  ])
-
-  function restartGame() {
-    setPosition([{
-      id: 1,
-      turn: ''
-    },
-    {
-      id: 2,
-      turn: ''
-    },
-    {
-      id: 3,
-      turn: ''
-    },
-    {
-      id: 4,
-      turn: ''
-    },
-    {
-      id: 5,
-      turn: ''
-    },
-    {
-      id: 6,
-      turn: ''
-    },
-    {
-      id: 7,
-      turn: ''
-    },
-    {
-      id: 8,
-      turn: ''
-    },
-    {
-      id: 9,
-      turn: ''
-    }])
-
-    setTurn(false)
-
-    setWinner('')
-  }
+  const { turn, setTurn, winner, setWinner, resultx, setResultx, resulto, setResulto, position, setPosition } = useContext(GameContext)
 
   useEffect(() => {
     let i;
@@ -182,14 +94,12 @@ function App() {
   return (
     <div className="App">
 
-
-
       <div className="game-container">
 
         <h1 className="title">Jogo da Velha</h1>
         <Game turn={turn} position={position} setTurn={setTurn} winner={winner} />
         <h3 className="winner">{winner}</h3>
-        <Button restartGame={restartGame} />
+        <Button />
 
       </div>
 

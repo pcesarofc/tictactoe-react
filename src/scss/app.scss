@@ -11,53 +11,28 @@
 
 
 html, #root, body{
-    width: 100%;
-    height: 100%;
-    margin: 0;
+    @include dimension(100%, 100%);
+    @include margin(0, 0, 0, 0);
+    @include color($background-color, $font-color);
 }
 
 .App{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(58, 58, 58);
+    @include dimension(100%, 100%);
+    @include display(flex, row, center, center);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white;
 
     .game-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include display(flex, column, center, center);
         
         .winner{
-            height: 22px;
+            @include dimension(auto, 22px);
         }
     }
 }
 
 @media screen and(max-width:650px){
     .App{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        background-color: rgb(58, 58, 58);
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        color: white;
-    
-        .game-container{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            
-            .winner{
-                height: 22px;
-            }
-        }
+        @include dimension(100%, auto);
+        @include display(flex, column, space-evenly, center);
     }
-    
 }

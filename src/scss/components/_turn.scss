@@ -1,6 +1,6 @@
 .turn{
-    width: 300px;
-    text-align: center;
-    font-size: 36px;
-    margin: 0px;
+    @include dimension(300px, auto);
+    @include text(center, none);
+    @include font(36px, $bold);
+    @include margin(0, 0, 0, 0);
 }

@@ -1,16 +1,11 @@
 .position{
-    background-color: rgb(141, 141, 241);
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 72px;
-    color: white;
-    font-weight: 800;
+    @include color($game-color, $font-color);
+    @include display(flex, column, center, center);
+    @include border(1px, solid, $black-color);
+    @include font(72px, $extra-bold);
 
     &:hover{
-        background-color: rgb(162, 162, 247);
+        @include color($game-secondary-color, $font-color);
         cursor: pointer;
     }
 }
